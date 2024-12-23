@@ -844,3 +844,7 @@ hr {
 
 
 
+.logout-btn{
+  border: none;
+  cursor: pointer;
+}

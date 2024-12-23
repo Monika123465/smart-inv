@@ -32,9 +32,9 @@ function Login() {
  return (
   <div className='container'>
    <div className='row d-flex'>
-    <div className='col-6 my-5'>
-     <img src='media/images/landing.png' style={{ width: "40rem" }} alt='err' />
-    </div>
+   <div className="col-6 my-5 d-none img-fluid d-md-block">
+          <img className="opacity-75 img-fluid d-none d-md-block" src="media/images/loginPage.jpg" style={{ width: "40rem" }} alt="err" />
+        </div>
     <div className='col-6 text-center'>
      <div className='container mt-5'>
       <h1 className='mb-2'>Login</h1>
