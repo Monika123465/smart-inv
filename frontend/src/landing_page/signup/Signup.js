@@ -41,6 +41,7 @@ function Signup() {
    setIsLoading(false);
   }
  };
+ console.log(username, email, password, confirmPassword);
 
  return (
   <div className='container '>
@@ -53,33 +54,30 @@ function Signup() {
       <h1 class='mb-2 '>Signup now</h1>
       <p className='text-muted'>signup to continue</p>
       <form onSubmit={handleSignup}>
-       <div class='mb-3'>
-        <label for='username' class='form-label'>
-         Username
-        </label>
-        <input type='text' placeholder='Enter Your Username' class='form-control' id='username' required value={username} onChange={(e) => setUsername(e.target.value)} />
-       </div>
-
-       <div class='mb-3'>
-        <label for='email' class='form-label'>
-         Email
-        </label>
-        <input type='text' placeholder='username@email.com' class='form-control' id='email' required value={email} onChange={(e) => setEmail(e.target.value)} />
-       </div>
-
-       <div class='mb-3'>
-        <label for='password' class='form-label'>
-         Password
-        </label>
-        <input type='password' placeholder='Enter your  password' class='form-control' id='password' required value={password} onChange={(e) => setPassword(e.target.value)} />
-       </div>
-
-       <div class='mb-3'>
-        <label for='password' class='form-label'>
-         Confirm password
-        </label>
-        <input placeholder='confirm your password' type='password' class='form-control' id='password' required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-       </div>
+    <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">User Name</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control" id="staticEmail" value={username} onChange={(e) => setUsername(e.target.value)} />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control"  value={email} onChange={(e) => setEmail(e.target.value)} />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input  type="password" class="form-control" id="inputPassword" value={password} onChange={(e) => setPassword(e.target.value)} />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+    <div class="col-sm-10">
+      <input  type="password" class="form-control" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+    </div>
+  </div>
        <button type='submit' class='btn btn-primary' disabled={isLoading}>
         Signup now
        </button>

@@ -13,6 +13,10 @@ const Menu = () => {
  const handleProfileClick = (index) => {
   setIsProfileDropdownOpen(!isProfileDropdownOpen);
  };
+ const handleLogout = () => {
+  localStorage.removeItem("token");
+  window.location.href = "/";
+ }
 
  const menuClass = "menu";
  const activeMenuClass = "menu selected";
@@ -54,13 +58,22 @@ const Menu = () => {
      </li>
      <li></li>
     </ul>
-    <hr />
+    
     <div className='profile' onClick={handleProfileClick}>
-     <div className='avatar'>ZU</div>
-     <p className='username'>{username}</p>
+     <div className='avatar'>{username.split("")[0]}</div>
+    <p className='username'>{username}</p>
+    </div>
+    <hr/>
+    <div> 
+     {username && (
+      <div className='profile-dropdown mr-4'  >
+       <button onClick={handleLogout}>Logout</button>
+      </div>
+     )}
     </div>
    </div>
-  </div>
+  </div>  
+  
  );
 };
 

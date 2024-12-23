@@ -40,30 +40,27 @@ function Login() {
       <h1 className='mb-2'>Login</h1>
       <p className='text-muted'>Login to your account</p>
       <form onSubmit={handleLogin}>
-       <div className='mb-3'>
-        <label for='username' className='form-label'>
-         Username
-        </label>
-        <input type='text' placeholder='username@email.com' className='form-control' id='username' required value={username} onChange={(e) => setUsername(e.target.value)} />
-       </div>
-
-       <div className='mb-3'>
-        <label for='password' className='form-label'>
-         Password
-        </label>
-        <input type='password' placeholder='Enter your password' className='form-control' id='password' required value={password} onChange={(e) => setPassword(e.target.value)} />
-       </div>
+      <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">User Name</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control" id="staticEmail" requiredvalue={username} onChange={(e) => setUsername(e.target.value)} />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input  type="password" class="form-control" id="inputPassword" required value={password} onChange={(e) => setPassword(e.target.value)} />
+    </div>
+  </div>
        <button type='submit' className='btn btn-primary' disabled={isLoading}>
         Login
        </button>
 
        <p className='mt-3'>
-        Already have an account?{" "}
-        <Link className='nav-link active' to='/signup' style={{ color: "blue", marginRight: "2rem" }}>
-         Signup
-        </Link>
+        Already have an account?{" "} <Link to='/signup'>Signup</Link>
+       
        </p>
-      </form>
+     </form>
      </div>
     </div>
    </div>
