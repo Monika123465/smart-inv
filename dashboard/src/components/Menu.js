@@ -61,14 +61,14 @@ const Menu = () => {
     
     <div className='profile' onClick={handleProfileClick}>
      <div className='avatar'>{username.split("")[0]}</div>
-    <p className='username'>{username}</p>
+    <p className='username text-muted fs-12'>{username.toUpperCase()}</p>
     </div>
     <hr/>
     <div> 
      {username && (
-      <div className='profile-dropdown mr-4'  >
-       <button onClick={handleLogout}>Logout</button>
-      </div>
+    <button class="btn btn-primary"
+        onClick={handleLogout}>Logout</button>
+      
      )}
     </div>
    </div>
