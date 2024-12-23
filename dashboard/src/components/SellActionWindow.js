@@ -21,7 +21,7 @@ const SellActionWindow = ({ uid }) => {
     })
     .then(() => {
       alert("Sell order placed successfully!");
-      GeneralContext.closeBuyWindow(); // Close the sell window (using context or any other method)
+      GeneralContext.closeSellWindow(); // Close the sell window (using context or any other method)
     })
     .catch((error) => {
       console.error("Error placing sell order:", error);
@@ -30,7 +30,7 @@ const SellActionWindow = ({ uid }) => {
   };
 
   const handleCancelClick = () => {
-    GeneralContext.closeBuyWindow(); // Close the window without placing an order
+    GeneralContext.closeSellWindow(); // Close the window without placing an order
   };
 
   return (
@@ -67,7 +67,7 @@ const SellActionWindow = ({ uid }) => {
           <Link className="btn btn-blue" onClick={handleSellClick}>
             Sell
           </Link>
-          <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
+          <Link to="" className="btn btn-red" onClick={handleCancelClick}>
             Cancel
           </Link>
         </div>
