@@ -8,8 +8,8 @@ import GeneralContext from "./GeneralContext"; // Assuming this is used for clos
 import "./BuyActionWindow.css"; // You can reuse this CSS for styling
 
 const SellActionWindow = ({ uid }) => {
-  const [stockQuantity, setStockQuantity] = useState(1); // Default quantity set to 1
-  const [stockPrice, setStockPrice] = useState(0.0); // Default price is 0.0
+  const [stockQuantity, setStockQuantity] = useState(); // Default quantity set to 1
+  const [stockPrice, setStockPrice] = useState(); // Default price is 0.0
 
   const handleSellClick = () => {
     // Send the sell order to the backend via POST request
